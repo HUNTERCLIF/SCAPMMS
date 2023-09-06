@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSAPMMS - Attachment Search And Application</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="attachment">
+            <h2>Attachment Search...</h2>
+        </div>
+
+        <form id="searchForm">
+            <div class="mb-3">
+                <label for="keywords" class="form-label">Keywords:</label>
+                <input type="text" class="form-control" id="keywords" name="keywords" placeholder="Enter keywords">
+            </div>
+
+            <div class="mb-3">
+                <label for="location" class="form-label">Location:</label>
+                <input type="text" class="form-control" id="location" name="location" placeholder="Enter location">
+            </div>
+        </form>
+
+        <div>
+            <h2>Apply for Attachment</h2>
+        </div>
+
+        <form id="applicationForm" action="submit_application.php" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="position" class="form-label">Position:</label>
+                <input type="text" class="form-control" id="position" name="position" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="resume" class="form-label">Resume (PDF or Word Document):</label>
+                <input type="file" class="form-control" id="resume" name="resume" required accept=".pdf, .doc, .docx">
+            </div>
+
+            <div class="mb-3">
+                <label for="additionaldocs" class="form-label">Additional Document (if any):</label>
+                <input type="file" class="form-control" id="additionaldocs" name="additionaldocs" required accept=".pdf, .doc, .docx">
+            </div>
+
+            <div>
+                <input type="submit" class="btn btn-primary" value="Apply">
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var searchForm = document.getElementById('searchForm');
+            var applicationForm = document.getElementById('applicationForm');
+
+            searchForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                // Perform search logic
+                // ...
+            });
+
+            applicationForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                // Perform application submission logic
+                // ...
+            });
+        });
+    </script>
+</body>
+</html>

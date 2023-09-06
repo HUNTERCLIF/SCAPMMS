@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSAPMMS - Document Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="documentmanagement">
+        <h3>Document Management</h3>
+        <h4>Student Documents</h4>
+    </div>
+
+    <div>
+        <form action="upload_document.html" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="StudentDocument">Upload Document</label>
+                <input type="file" class="form-control" id="StudentDocument" name="StudentDocument" required>
+            </div>
+
+            <div>
+                <input type="submit" class="btn btn-primary" value="Upload">
+            </div>
+        </form>
+    </div>
+
+
+    <div>
+        <h3>Employer Document</h3>
+    </div>
+
+    <form action="upload_document.html" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="employerdocument">Upload Document:</label>
+            <input type="file" class="form-control" id="employerdocument" name="employerdocument" required>
+        </div>
+
+         <div>
+            <input type="submit" class="btn btn-primary" value="Upload">
+         </div>
+    </form>
+
+
+    <div>
+        <h3>Manage Documents</h3>
+    </div>
+
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Document</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Offer Letter.pdf</td>
+                    <td>
+                        <a href="download_document.php?filename=offer_letter.pdf" class="btn btn-primary">Download</a>
+                        <a href="delete_document.php?filename=offer_letter.pdf" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Contact.docx</td>
+                    <td>
+                        <a href="download_document.php?filename=contract.docx" class="btn btn-primary">Download</a>
+                        <a href="Delete_document.php?filename=contract.docx" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

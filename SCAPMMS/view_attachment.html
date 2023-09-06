@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Attachees</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h2>Review Applications</h2>
+        </div>
+
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Application ID</th>
+                        <th>Student Name</th>
+                        <th>Position</th>
+                        <th>Contact</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Add dynamic rows here using JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Example dynamic row creation using JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            var tbody = document.querySelector('tbody');
+
+            // Example data
+            var applications = [
+                { id: 1, studentName: '', position: '', status: '', contact: ''}
+            ];
+
+            // Loop through the applications data and create rows dynamically
+            applications.forEach(function(application) {
+                var tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${application.id}</td>
+                    <td>${application.studentName}</td>
+                    <td>${application.position}</td>
+                    <td>${application.contact}</td>
+                    <td>${application.status}</td>
+                    <td>
+                        <a href="approve_application.php?id=${application.id}" class="btn btn-primary">Approve</a>
+                        <a href="reject_application.php?id=${application.id}" class="btn btn-danger">Reject</a>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        });
+    </script>
+</body>
+</html>

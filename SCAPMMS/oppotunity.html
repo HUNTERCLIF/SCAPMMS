@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Posted Attachment Opportunities</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="attachment-opportunity">
+            <h1>Post Attachment Opportunity</h1>
+        </div>
+
+        <div class="form">
+            <form id="opportunityForm" action="opportunity.html" method="post">
+                <div class="mb-3">
+                    <label for="title" class="form-label">Job Title:</label>
+                    <input type="text" class="form-control" id="title" name="title" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="description" class="form-label">Job Description:</label>
+                    <textarea class="form-control" id="description" name="description" required></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label for="requirements" class="form-label">Job Requirements:</label>
+                    <textarea class="form-control" id="requirements" name="requirements" cols="30" rows="10"></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label for="period" class="form-label">Period:</label>
+                    <input type="text" class="form-control" id="period" name="period" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="location" class="form-label">Location:</label>
+                    <input type="text" class="form-control" id="location" name="location" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Contact:</label>
+                    <input type="number" class="form-control" id="phone" name="phone" required>
+                </div>
+
+                <div>
+                    <input type="submit" class="btn btn-primary" value="Post Opportunity">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var opportunityForm = document.getElementById('opportunityForm');
+            opportunityForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                // Perform opportunity posting logic
+                // ...
+            });
+        });
+    </script>
+</body>
+</html>
